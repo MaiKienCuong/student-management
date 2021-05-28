@@ -21,9 +21,8 @@ import java.util.Map;
 public class FormStudent extends AppCompatActivity {
 
     private Student student;
-    private EditText name, clazz, diem;
     private Button btnSave;
-
+    private EditText name, clazz, diem;
     private String url = "https://60b0906b1f26610017ffe6e8.mockapi.io/student";
 
     @Override
@@ -47,10 +46,8 @@ public class FormStudent extends AppCompatActivity {
 
         btnSave.setOnClickListener(v -> {
             if (student.getMssv() == 0) {
-                Toast.makeText(this, "add", Toast.LENGTH_SHORT).show();
                 addStudent();
             } else {
-                Toast.makeText(this, "update" + student.getMssv(), Toast.LENGTH_SHORT).show();
                 updateStudent();
             }
         });

@@ -28,6 +28,9 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.login_email);
         pass = findViewById(R.id.login_pass);
 
+        email.setText("123456@gmail.com");
+        pass.setText("123456");
+
         btnLogin.setOnClickListener(v -> {
             if (valid()) {
                 String strEmail = email.getText().toString().trim();
@@ -39,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(new Intent(LoginActivity.this, ManagerActivity.class));
                                 finish();
                             } else {
-                                Toast.makeText(this, "Dang nhap khong thanh cong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this, "Đăng nhập không thành công. "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
             }
@@ -51,11 +54,11 @@ public class LoginActivity extends AppCompatActivity {
         String strPass = pass.getText().toString().trim();
 
         if (strEmail.isEmpty()) {
-            email.setError("Email khong duoc de trong");
+            email.setError("Email không được để trống");
             return false;
         }
         if (strPass.isEmpty()) {
-            pass.setError("vui long nhap mat khau");
+            pass.setError("Vui lòng nhập mật khẩu");
             return false;
         }
         return true;

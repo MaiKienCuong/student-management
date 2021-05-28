@@ -46,14 +46,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Student student = students.get(position);
 
-        holder.name.setText(student.getName());
-        holder.clazz.setText(student.getClazz());
-        holder.diem.setText(student.getDiem() + "");
+        holder.name.setText("Tên: " + student.getName());
+        holder.clazz.setText("Lớp học: " + student.getClazz());
+        holder.diem.setText("Điểm TB: " + student.getDiem());
 
         holder.btnDelete.setOnClickListener(v -> {
             StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url + "/" + student.getMssv(),
                     response -> {
-                        Toast.makeText(context, "Xoa thanh cong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Xóa thành công student", Toast.LENGTH_SHORT).show();
                         update();
                     },
                     error -> {

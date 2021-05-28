@@ -24,13 +24,10 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         btnLogin = findViewById(R.id.main_btn_login);
 
-        stateListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(MainActivity.this, ManagerActivity.class));
-                    finish();
-                }
+        stateListener = firebaseAuth -> {
+            if (firebaseAuth.getCurrentUser() != null) {
+                startActivity(new Intent(MainActivity.this, ManagerActivity.class));
+                finish();
             }
         };
 
