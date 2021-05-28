@@ -6,6 +6,11 @@
 ![alt text](https://github.com/MaiKienCuong/student-management/blob/master/addStudent.png)
 
 ```diff
+- update student
+```
+![alt text](https://github.com/MaiKienCuong/student-management/blob/master/update.png)
+
+```diff
 - get all student
 ```
 ![alt text](https://github.com/MaiKienCuong/student-management/blob/master/listAll.png)
