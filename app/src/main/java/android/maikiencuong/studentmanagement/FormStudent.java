@@ -44,6 +44,12 @@ public class FormStudent extends AppCompatActivity {
             diem.setText(student.getDiem() + "");
         }
 
+        if (student.getMssv() == 0)
+            btnSave.setText("Thêm");
+        else
+            btnSave.setText("Cập nhật");
+
+
         btnSave.setOnClickListener(v -> {
             if (student.getMssv() == 0) {
                 addStudent();
